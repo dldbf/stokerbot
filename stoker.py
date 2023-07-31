@@ -229,7 +229,5 @@ async def on_message(message):
         embed.set_thumbnail(url="")
         await message.channel.send(embed=embed)
 
-try:
-    client.run(TOKEN)
-except discord.errors.LoginFailure as e:
-    print("Improper token has been passed.")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
